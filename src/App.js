@@ -145,7 +145,7 @@ function Pad({ clip, volume, setRecording }) {
   };
 
   return (
-    <div onClick={playSound} className="btn btn-secondary p-4 m-3">
+    <div onClick={playSound} className={'btn btn-secondary p-4 m-3 ${active && "btn-warning"} '}>
       <audio className="clip" id={clip.keyTrigger}src={clip.url} />
       {clip.keyTrigger}
     </div>
