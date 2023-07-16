@@ -65,12 +65,12 @@ function App() {
       audioTag.play();
       index++;
     }, speed * 600);
-    setTimeout(() => clearInterval(interval), 600 * speed * recordArray.length - 1);
+    setTimeout(() => clearInterval(interval), 600 * speed * (recordArray.length - 1));
   };
 
   return (
-    <div className="bg-info min-vh-100 text-white">
-      <div className="text-center">
+    <div className="App royal-purple-bg min-vh-100 text-white">
+      <div className="App text-center">
         <h2>Drum Machine</h2>
         {audioClips.map((clip) => (
           <Pad
@@ -145,7 +145,10 @@ function Pad({ clip, volume, setRecording }) {
   };
 
   return (
-    <div onClick={playSound} className={'btn btn-secondary p-4 m-3 ${active && "btn-warning"} '}>
+    <div 
+    onClick={playSound} 
+    className={`btn btn-secondary p-4 m-3 ${active && "btn-warning"}`}
+    >
       <audio className="clip" id={clip.keyTrigger}src={clip.url} />
       {clip.keyTrigger}
     </div>
